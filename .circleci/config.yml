@@ -1,5 +1,8 @@
-machine:
-  node:
-    version: 10.1.0
- checkout
-   - run: /usr/local/go run test.go 
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.4.1
+    steps:
+      - checkout
+      - run: go run test.go
